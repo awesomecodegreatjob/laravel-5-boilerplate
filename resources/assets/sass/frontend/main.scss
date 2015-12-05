@@ -1,7 +1,25 @@
-// Any Bootstrap or FontAwesome-specific variables added here will overwrite the defaults.
+// Any FontAwesome-specific variables added here will overwrite the defaults.
 @import "variable-overrides";
+@import "foundation-settings";
 
-@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "../../../../node_modules/foundation-sites/scss/foundation";
 @import '../../../../node_modules/font-awesome/scss/font-awesome';
+
+@include foundation-global-styles;
+
+/**
+ *  Foundation components
+ */
+@include foundation-button;
+@include foundation-callout;
+@include foundation-dropdown;
+@include foundation-dropdown-menu;
+@include foundation-form-checkbox;
+@include foundation-form-label;
+@include foundation-form-text;
+@include foundation-grid;
+@include foundation-menu;
+@include foundation-top-bar;
+@include foundation-typography;
 
 // Front-end SCSS goes here.

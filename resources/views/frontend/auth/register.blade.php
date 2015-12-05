@@ -3,52 +3,61 @@
 @section('content')
 	<div class="row">
 
-		<div class="col-md-8 col-md-offset-2">
+		<div class="small-12 columns">
 
-			<div class="panel panel-default">
-				<div class="panel-heading">{{ trans('labels.register_box_title') }}</div>
+			<div class="callout callout-info">
+				<h2>{{ trans('labels.register_box_title') }}</h2>
 
-				<div class="panel-body">
+                {!! Form::open(['to' => 'auth/register', 'class' => 'form-horizontal', 'role' => 'form']) !!}
 
-					{!! Form::open(['to' => 'auth/register', 'class' => 'form-horizontal', 'role' => 'form']) !!}
+                    <div class="row">
+                        <div class="small-12 columns">
 
-						<div class="form-group">
-							{!! Form::label('name', trans('validation.attributes.name'), ['class' => 'col-md-4 control-label']) !!}
-							<div class="col-md-6">
-								{!! Form::input('name', 'name', old('name'), ['class' => 'form-control']) !!}
-							</div>
-						</div>
+                            <label>{!! Form::label('name', trans('validation.attributes.name')) !!}
+                                {!! Form::input('text', 'name', old('name')) !!}
+                            </label>
 
-						<div class="form-group">
-							{!! Form::label('email', trans('validation.attributes.email'), ['class' => 'col-md-4 control-label']) !!}
-							<div class="col-md-6">
-								{!! Form::input('email', 'email', old('email'), ['class' => 'form-control']) !!}
-							</div>
-						</div>
+                        </div>
+                    </div>
 
-						<div class="form-group">
-							{!! Form::label('password', trans('validation.attributes.password'), ['class' => 'col-md-4 control-label']) !!}
-							<div class="col-md-6">
-								{!! Form::input('password', 'password', null, ['class' => 'form-control']) !!}
-							</div>
-						</div>
+                    <div class="row">
+                        <div class="small-12 columns">
 
-						<div class="form-group">
-							{!! Form::label('password_confirmation', trans('validation.attributes.password_confirmation'), ['class' => 'col-md-4 control-label']) !!}
-							<div class="col-md-6">
-								{!! Form::input('password', 'password_confirmation', null, ['class' => 'form-control']) !!}
-							</div>
-						</div>
+                            <label>{!! Form::label('email', trans('validation.attributes.email')) !!}
+                                {!! Form::input('email', 'email', old('email')) !!}
+                            </label>
 
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								{!! Form::submit(trans('labels.register_button'), ['class' => 'btn btn-primary']) !!}
-							</div>
-						</div>
+                        </div>
+                    </div>
 
-					{!! Form::close() !!}
+                    <div class="row">
+                        <div class="small-12 columns">
 
-				</div><!-- panel body -->
+                            <label>{!! Form::label('password', trans('validation.attributes.password')) !!}
+                                {!! Form::input('password', 'password', null) !!}
+                            </label>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="small-12 columns">
+
+                            <label>{!! Form::label('password_confirmation', trans('validation.attributes.password_confirmation')) !!}
+                                {!! Form::input('password', 'password_confirmation', null) !!}
+                            </label>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="small-12 columns">
+                            {!! Form::submit(trans('labels.register_button'), ['class' => 'button']) !!}
+                        </div>
+                    </div>
+
+                {!! Form::close() !!}
+
 
             </div><!-- panel -->
 

@@ -7,7 +7,7 @@
         <meta name="_token" content="{{ csrf_token() }}" />
         <title>@yield('title', app_name())</title>
         <meta name="description" content="@yield('meta_description', 'Default Description')">
-        <meta name="author" content="@yield('author', 'Anthony Rappa')">
+        <meta name="author" content="@yield('author', 'Cody Gibbs')">
         @yield('meta')
 
         @yield('before-styles-end')
@@ -30,14 +30,12 @@
 
         @include('frontend.includes.nav')
 
-        <div class="container-fluid">
-            @include('includes.partials.messages')
-            @yield('content')
-        </div><!-- container -->
+        @include('includes.partials.messages')
+        @yield('content')
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="{{asset('js/vendor/jquery-1.11.2.min.js')}}"><\/script>')</script>
-        {!! HTML::script('js/vendor/bootstrap.min.js') !!}
+        {!! HTML::script('js/vendor/foundation.min.js') !!}
 
         @yield('before-scripts-end')
         {!! HTML::script(elixir('js/frontend.js')) !!}

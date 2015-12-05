@@ -3,8 +3,7 @@
 /**
  * Frontend Controllers
  */
-get('/', 'FrontendController@index')->name('home');
-get('macros', 'FrontendController@macros');
+get('/', 'PageController@index')->name('home');
 
 /**
  * These frontend controllers require the user to be logged in

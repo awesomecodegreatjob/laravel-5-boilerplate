@@ -3,39 +3,39 @@
 @section('content')
 	<div class="row">
 
-		<div class="col-md-8 col-md-offset-2">
+		<div class="small-12 columns">
 
-			<div class="panel panel-default">
+			<div class="callout callout-info">
 
-				<div class="panel-heading">{{ trans('labels.reset_password_box_title') }}</div>
+				<h2>{{ trans('labels.reset_password_box_title') }}</h2>
 
-				<div class="panel-body">
-					@if (session('status'))
-						<div class="alert alert-success">
-							{{ session('status') }}
-						</div>
-					@endif
+                @if (session('status'))
+                    <div class="alert alert-success">
+                        {{ session('status') }}
+                    </div>
+                @endif
 
-					{!! Form::open(['to' => 'password/email', 'class' => 'form-horizontal', 'role' => 'form']) !!}
+                {!! Form::open(['to' => 'password/email', 'role' => 'form']) !!}
 
-						<div class="form-group">
-							{!! Form::label('email', trans('validation.attributes.email'), ['class' => 'col-md-4 control-label']) !!}
-							<div class="col-md-6">
-								{!! Form::input('email', 'email', old('email'), ['class' => 'form-control']) !!}
-							</div>
-						</div>
+                    <div class="row">
+                        <div class="small-12 columns">
 
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								{!! Form::submit(trans('labels.send_password_reset_link_button'), ['class' => 'btn btn-primary']) !!}
-							</div>
-						</div>
+                            <label>{!! Form::label('email', trans('validation.attributes.email')) !!}
+                                {!! Form::input('email', 'email', old('email')) !!}
+                            </label>
 
-					{!! Form::close() !!}
+                        </div>
+                    </div>
 
-				</div><!-- panel body -->
+                    <div class="row">
+                        <div class="small-12 columns">
+                            {!! Form::submit(trans('labels.send_password_reset_link_button'), ['class' => 'button']) !!}
+                        </div>
+                    </div>
 
-            </div><!-- panel -->
+                {!! Form::close() !!}
+
+            </div><!-- callout -->
 
         </div><!-- col-md-8 -->
 
